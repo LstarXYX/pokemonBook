@@ -1,0 +1,5 @@
+/**index.wxss**/
+.bottom-bar
+{
+  width: 100%;
+}

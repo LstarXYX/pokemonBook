@@ -1,0 +1,4 @@
+<!--pages/main/main.wxml-->
+<scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+  <view wx:for="{{titles}}" class="scroll-view-item demo-text-1">{{item.title}}</view>
+</scroll-view>

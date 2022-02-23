@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+<i-row>
+<!-- 首页 图鉴 -->
+<block wx:if="{{current=='main'}}">
+  <main></main>
+</block>
+<!-- 用户 -->
+<view wx:if="{{current=='user'}}">
+  <user></user>
+</view>
+</i-row>
+
+<i-row class="bottom-bar">
+    <i-tab-bar fixed="true" class="tab-bar" current="{{ current }}" color="#f759ab" bindchange="handleChange">
+      <i-tab-bar-item key="main" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+      <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="朋友"></i-tab-bar-item>
+      <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="通知"></i-tab-bar-item>
+      <i-tab-bar-item key="user" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+    </i-tab-bar>
+</i-row>
+</view>
