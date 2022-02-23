@@ -1,2 +1,8 @@
 <!--compoments/bookItem/book-item.wxml-->
-<text>compoments/bookItem/book-item.wxml</text>
+<view>
+<image src="{{img_url}}"></image>
+<text>{{name}}</text>
+<text class="type">{{type_one}}</text>
+<text class="type">{{type_two}}</text>
+<text>{{no}}</text>
+</view>

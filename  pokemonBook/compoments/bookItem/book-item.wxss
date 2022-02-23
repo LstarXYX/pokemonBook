@@ -1,1 +1,4 @@
 /* compoments/bookItem/book-item.wxss */
+.type[hidden]{
+  display: none;
+}

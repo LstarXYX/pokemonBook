@@ -5,16 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    titles: [
-      {title: "aaa"},
-      {title: "bbb"},
-      {title: "ccc"},
-      {title: "ddd"},
-      {title: "eee"},
-      {title: "fff"},
-      {title: "ggg"},
-      {title: "hhh"},
-    ]
+    
   },
 
   scrollToTop() {
