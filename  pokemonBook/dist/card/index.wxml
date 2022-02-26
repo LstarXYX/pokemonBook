@@ -1,11 +1,22 @@
-<view class="i-class i-card {{ full ? 'i-card-full' : '' }}">
-    <view class="i-class i-card-header">
-        <view class="i-card-header-content">
-            <image class="i-card-header-thumb" src="{{ thumb }}" mode="aspectFit" wx:if="{{ thumb }}" />
-            {{ title }}
-        </view>
-        <view class="i-card-header-extra" wx:if="{{ extra }}">{{ extra }}</view>
+<view class="l-class card-container {{'card-container-' + type}} {{'card-container-' + type + '-' + position}} {{full?'card-container-full':'card-container-unfull'}}">
+  <block wx:if="{{type ==='primary' || type ==='cover'}}">
+    <image wx:if="{{!plaintext}}" class="l-img-class {{full?'cover-img-full':'cover-img-unfull'}} {{ 'card-img-' + type }} {{ 'card-img-' + type + '-' + position }}" mode="{{imageMode}}" lazy-load src="{{image}}"></image>
+    <view class="card-content">
+      <text class="l-title-class card-title {{'card-title-' + type}}">{{title}}</text>
+      <slot/>
     </view>
-    <view class="i-class i-card-body"><slot name="content"></slot></view>
-    <view class="i-class i-card-footer"><slot name="footer"></slot></view>
+  </block>
+  <block wx:if="{{type ==='avatar'}}">
+    <view class="card-avatar-top">
+      <view class="card-avatar-left">
+        <image mode="aspectFill" class="l-img-class {{ 'card-img-' + type }}" src="{{image}}" mode="{{imageMode}}" lazy-load></image>
+        <view class="card-avatar">
+          <text class="l-title-class card-title {{'card-title-' + type}}">{{title}}</text>
+          <text class="describe">{{describe}}</text>
+        </view>
+      </view>
+      <slot name="more"/>
+    </view>
+    <slot/>
+  </block>
 </view>

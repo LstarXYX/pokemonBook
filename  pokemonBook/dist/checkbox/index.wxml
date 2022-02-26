@@ -1,8 +1,7 @@
-<view class="i-class i-checkbox" catchtap="checkboxChange">
-    <i-cell i-class="i-checkbox-cell">
-        <label>
-            <radio value="{{value}}" checked="{{checked}}" color="{{checked?color:''}}" disabled="{{disabled}}" class="i-checkbox-radio {{positionCls}}" />
-            <view class="i-checkbox-title">{{value}}</view>
-        </label>
-    </i-cell>
+<view mut-bind:lintap="onCheckboxChangeTap" mut-bind:tap="onCheckboxChangeTap" class="label label-{{placement}} label-placement-{{parentPlacement}} {{disabled ? 'label-disabled l-disabled-class' : 'l-class'}}">
+        <view class="checkbox-{{placement}} l-icon-class" style="color:{{checked ? selectColor : (disabled ? disabledColor : color)}};font-size: {{size}}">
+            <slot wx:if="{{custom}}" name="icon"/>
+            <view wx:else class="iconfont {{checked? 'icon-select': 'icon-unselect'}}"></view>
+        </view>
+        <slot/>
 </view>

@@ -1,9 +1,0 @@
-/* compoments/bookItem/book-item.wxss */
-.type[hidden]{
-  display: none;
-}
-image{
-  width: 50rpx;
-  height: 50rpx;
-  left: 0;
-}

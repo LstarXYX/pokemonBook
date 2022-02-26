@@ -1,6 +1,10 @@
-<view class="i-class i-spin i-spin-{{ size }} {{ fix ? 'i-spin-fix' : '' }} {{ custom ? 'i-spin-show-text' : '' }} {{ fullscreen ? 'i-spin-fullscreen' : '' }}">
-    <div class="i-spin-main">
-        <view class="i-spin-dot"></view>
-        <div class="i-spin-text"><slot></slot></div>
-    </div>
+<view wx:if="{{show}}" class="{{type==='flash'?'l-class':''}} {{type + '-spinner'}} {{type==='change'||custom?'':'spinner-' + type + '-' + size}}">
+  <block wx:if="{{custom}}">
+    <slot/>
+  </block>
+  <block wx:else>
+    <view style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce1'}} {{'spinner-'+ type + '-' + size}}"></view>
+    <view wx:if="{{type==='flash' || type==='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce2'}} {{'spinner-'+ type + '-' + size}}"></view>
+    <view wx:if="{{type==='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce3'}} {{'spinner-'+ type + '-' + size}}"></view>
+  </block>
 </view>

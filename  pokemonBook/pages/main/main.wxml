@@ -1,4 +1,2 @@
 <!--pages/main/main.wxml-->
-<view wx:for="{{5}}">
-  <book-item></book-item>
-</view>
+<text>pages/main/main.wxml</text>

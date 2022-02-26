@@ -1,7 +1,1 @@
-{
-    "component": true,
-    "usingComponents":
-    {
-        "i-cell": "../cell/index"
-    }
-}
+{"component":true,"usingComponents":{"l-button":"../button/index"}}
