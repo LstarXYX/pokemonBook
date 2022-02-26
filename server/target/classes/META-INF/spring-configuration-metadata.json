@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "sysconfig",
+      "type": "pokement.lstar.system.SysConfig",
+      "sourceType": "pokement.lstar.system.SysConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "sysconfig.config",
+      "type": "java.util.Map<java.lang.Object,java.lang.Object>",
+      "sourceType": "pokement.lstar.system.SysConfig"
+    }
+  ],
+  "hints": []
+}
