@@ -51,4 +51,9 @@ public class SysConfig {
 
         return Convert.toStr(val);
     }
+
+    public static String getStr(String key)
+    {
+        return Convert.toStr(config.get(key));
+    }
 }

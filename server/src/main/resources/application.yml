@@ -15,5 +15,12 @@ spring:
 sysconfig:
   config:
     aaa: "aaa"
+    appid: "assad"
+    secret: "asssss"
+    #加盐的长度
+    random_salt_length: 10
+    token_secret: "123"
+    # 超时时间 小时
+    expiretime: 24
 
 

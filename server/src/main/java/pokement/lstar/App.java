@@ -8,7 +8,12 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
 import pokement.lstar.system.SysConfig;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author L.star
@@ -25,11 +30,32 @@ public class App {
     }
 
     @Bean
+    public RestTemplate restTemplate()
+    {
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(5000);
+        requestFactory.setReadTimeout(5000);
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setRequestFactory(requestFactory);
+        return restTemplate;
+    }
+
+    /**
+     * 缓存
+     * @return
+     */
+    @Bean
     public Cache<String, Object> caffeineCache()
     {
         return Caffeine.newBuilder()
                 .initialCapacity(DEF_MAX_CAPACITY)
                 .maximumSize(DEF_MAX_CAPACITY)
                 .build();
+    }
+    //永久缓存 手动更新
+    @Bean
+    public Map<Object, Object> staticCache()
+    {
+        return new ConcurrentHashMap<>();
     }
 }
