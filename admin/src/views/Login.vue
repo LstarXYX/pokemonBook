@@ -7,9 +7,7 @@
       </div>
 
       <el-form-item prop="username">
-        <span class="svg-container">
-          <svg-icon class="el-icon-user" />
-        </span>
+          <i class="el-icon-user" />
         <el-input
           ref="username"
           v-model="loginForm.username"
@@ -21,29 +19,18 @@
         />
       </el-form-item>
 
-      <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
         <el-form-item prop="password">
-          <span class="svg-container">
-            <svg-icon class="el-icon-view" />
-          </span>
+            <i class="el-icon-view" />
           <el-input
-            :key="passwordType"
             ref="password"
             v-model="loginForm.password"
-            :type="passwordType"
             placeholder="Password"
             name="password"
             tabindex="2"
             autocomplete="on"
-            @keyup.native="checkCapslock"
-            @blur="capsTooltip = false"
             @keyup.enter.native="handleLogin"
           />
-          <span class="show-pwd" @click="showPwd">
-            <svg-icon :class="passwordType === 'password' ? 'eye' : 'eye-open'" />
-          </span>
         </el-form-item>
-      </el-tooltip>
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
 
@@ -62,6 +49,8 @@
 </template>
 
 <script>
+import requestLogin from '../api/login'
+
 export default {
   name: 'Login',
   data() {
@@ -88,28 +77,9 @@ export default {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
         password: [{ required: true, trigger: 'blur', validator: validatePassword }]
       },
-      passwordType: 'password',
-      capsTooltip: false,
       loading: false,
       showDialog: false,
-      redirect: undefined,
-      otherQuery: {}
     }
-  },
-  watch: {
-    $route: {
-      handler: function(route) {
-        const query = route.query
-        if (query) {
-          this.redirect = query.redirect
-          this.otherQuery = this.getOtherQuery(query)
-        }
-      },
-      immediate: true
-    }
-  },
-  created() {
-    // window.addEventListener('storage', this.afterQRScan)
   },
   mounted() {
     if (this.loginForm.username === '') {
@@ -118,43 +88,21 @@ export default {
       this.$refs.password.focus()
     }
   },
-  destroyed() {
-    // window.removeEventListener('storage', this.afterQRScan)
-  },
   methods: {
-    checkCapslock(e) {
-      const { key } = e
-      this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
-    },
-    showPwd() {
-      if (this.passwordType === 'password') {
-        this.passwordType = ''
-      } else {
-        this.passwordType = 'password'
-      }
-      this.$nextTick(() => {
-        this.$refs.password.focus()
-      })
-    },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-        //登陆请求
-        
+          //登陆请求
+          requestLogin(this.loginForm)
+          .then(res=>{console.log(res.msg)})
+          .catch(err=>{console.log("error: "+err)})
+          .finally(()=> this.loading = false);
         } else {
           console.log('error submit!!')
           return false
         }
       })
-    },
-    getOtherQuery(query) {
-      return Object.keys(query).reduce((acc, cur) => {
-        if (cur !== 'redirect') {
-          acc[cur] = query[cur]
-        }
-        return acc
-      }, {})
     }
   }
 }
