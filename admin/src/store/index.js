@@ -6,17 +6,26 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state () {
     return {
-        token: ''
+        token: '',
+        isLogin: true,
+        isSP: true
     }
   },
   getters: {
     getToken: (state) => {
        return state.token;
+    },
+    getLoginStatus: (state) => {
+      return state.isLogin;
     }
   },
   mutations: {
      setToken(state, newToken) {
         state.token = newToken;
+     },
+     changeLoginStatus(state)
+     {
+        state.isLogin = !state.isLogin;
      }
   },
   actions: {
