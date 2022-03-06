@@ -6,7 +6,7 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    redirect: '/login'
+    redirect: '/admin'
   },
   {
     path: '/login',
@@ -16,7 +16,19 @@ const routes = [
   {
     path: '/admin',
     name: 'Admin',
-    component: () => import('../views/Admin.vue')
+    component: () => import('../views/Admin.vue'),
+    children: [
+      {
+        path: '/user',
+        name: 'User',
+        component: () => import('../views/User.vue')
+      },
+      {
+        path: '/pets',
+        name: 'Pets',
+        component: () => import('../views/Pets.vue')
+      }
+    ]
   }
 ]
 

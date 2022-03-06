@@ -58,7 +58,7 @@ export default {
             items: [
                 {
                     icon: 'el-icon-lx-home',
-                    index: 'dashboard',
+                    index: 'admin',
                     title: '系统首页'
                 },
                 // 用户管理
@@ -77,61 +77,11 @@ export default {
                         }
                     ]
                 },
-                // 图书管理
-                {
-                    icon: 'el-icon-notebook-2',
-                    index: '4',
-                    title: '图书管理',
-                    subs: [
-                        {
-                            index: 'booklist',
-                            title: '图书信息'
-                        },
-                        {
-                            index: 'addbook',
-                            title: '添加图书'
-                        }
-                    ]
-                },
-                //借书记录
+                //小精灵
                 {
                     icon: 'el-icon-s-order',
-                    index: 'lendlist',
-                    title: '借书记录'
-                },
-                //黑名单记录
-                {
-                    icon: 'el-icon-warning-outline',
-                    index: 'blacklist',
-                    title: '黑名单记录'
-                },
-                //数据分析
-                {
-                    icon: 'el-icon-s-data',
-                    index: 'dataAnalysis',
-                    title: '数据分析',
-                    subs: [
-                        {
-                            index: 'categoryData',
-                            title: '图书类别分析'
-                        },
-                        {
-                            index: 'lendBookNumData',
-                            title: '借阅人数分析'
-                        }
-                    ]
-                },
-                //操作日志
-                 {
-                    icon: 'el-icon-lx-cascades',
-                    index: 'syslog',
-                    title: '操作日志'
-                },
-                //定时任务
-                {
-                    icon: 'el-icon-cpu',
-                    index: 'jobs',
-                    title: '定时任务'
+                    index: 'pets',
+                    title: '小精灵'
                 }
             ]
         };
