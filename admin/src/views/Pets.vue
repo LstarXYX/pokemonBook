@@ -1,9 +1,10 @@
 <template>
-    <div>  
+    <div> 
+        <el-button type="primary" icon="el-icon-edit">添加</el-button>
+        <el-divider></el-divider>
         <el-table
       :data="tableData"
       style="width: 100%">
-
       <el-table-column  prop="name" label="精灵名字" width="180"> </el-table-column>
       <el-table-column  prop="no"  label="编号"  width="180"> </el-table-column>
       <el-table-column  label="图片"> 

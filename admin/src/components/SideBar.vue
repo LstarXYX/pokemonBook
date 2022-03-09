@@ -64,18 +64,18 @@ export default {
                 // 用户管理
                 {
                     icon: 'el-icon-user-solid',
-                    index: '3',
-                    title: '用户管理',
-                    subs: [
-                        {
-                            index: 'userlist',
-                            title: '用户信息'
-                        },
-                        {
-                            index: 'adduser',
-                            title: '添加用户'
-                        }
-                    ]
+                    index: 'user',
+                    title: '用户管理'
+                    // subs: [
+                    //     {
+                    //         index: 'userlist',
+                    //         title: '用户信息'
+                    //     },
+                    //     {
+                    //         index: 'adduser',
+                    //         title: '添加用户'
+                    //     }
+                    // ]
                 },
                 //小精灵
                 {

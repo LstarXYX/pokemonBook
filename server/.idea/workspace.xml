@@ -20,28 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33bd0ce8-40c8-4576-8a17-57069ff2379f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/common/AppException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/common/AuthInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/common/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/common/TokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/mapper/PetsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/mapper/wxRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/model/LoginStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/model/Pets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/model/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/model/wxRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/service/PetsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/service/impl/PetsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/service/impl/WxRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/service/wxRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pokement/lstar/system/LoginConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/others/table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/components/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/components/SideBar.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +126,8 @@
       <workItem from="1645930727727" duration="2331000" />
       <workItem from="1645951530773" duration="1979000" />
       <workItem from="1646550745023" duration="605000" />
+      <workItem from="1646743727714" duration="782000" />
+      <workItem from="1646830256046" duration="2869000" />
     </task>
     <servers />
   </component>
