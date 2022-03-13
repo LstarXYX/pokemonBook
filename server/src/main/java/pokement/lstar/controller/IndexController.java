@@ -5,10 +5,7 @@ import com.github.benmanes.caffeine.cache.Cache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import pokement.lstar.common.TokenUtil;
 import pokement.lstar.model.Pets;
@@ -40,6 +37,12 @@ public class IndexController {
     private wxRecordService wxRecordService;
 
     public static final String BASE_WX_LOGIN_URL =  "https://api.weixin.qq.com/sns/jscode2session?appid=" + SysConfig.getStr("appid")+"&secret="+SysConfig.getStr("secret")+"grant_type=authorization_code&js_code=";
+
+    @GetMapping("/error")
+    public Result error()
+    {
+        return Result.fail("error 未知错误");
+    }
 
     /**
      * 登陆

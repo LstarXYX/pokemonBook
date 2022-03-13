@@ -1,6 +1,6 @@
 <template>
     <div> 
-        <el-button type="primary" icon="el-icon-edit">添加</el-button>
+        <el-button type="primary" @click="showAddWin=true" icon="el-icon-edit">添加</el-button>
         <el-divider></el-divider>
         <el-table
       :data="tableData"
@@ -73,14 +73,15 @@ export default {
                   image_url: '',
                   attr_one: 2,
                   attr_two: 1
-              }
+              },
           ],
           pager: {
               total: 1000,
               page_count: 100, //总页数
               current_page: 1,  //当前页数
               page_size: 2
-          }
+          },
+          showAddWin: false
         }
     }
 }

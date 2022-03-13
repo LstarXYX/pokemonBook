@@ -10,7 +10,7 @@ import pokement.lstar.common.AuthInterceptor;
  * @author L.star
  * @date 2022/2/27 11:09
  */
-@Configuration
+
 public class LoginConfig implements WebMvcConfigurer {
 
     @Override
@@ -18,6 +18,6 @@ public class LoginConfig implements WebMvcConfigurer {
         InterceptorRegistration registration = registry.addInterceptor(new AuthInterceptor());
         registration.addPathPatterns("/**");
         registration.excludePathPatterns(
-                "/login","/admin/**","/**/*.html","/**/*.js", "/**/*.css");
+                "/login","/admin/login","/error","/**/*.html","/**/*.js", "/**/*.css");
     }
 }

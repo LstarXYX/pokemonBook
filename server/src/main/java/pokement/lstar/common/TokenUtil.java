@@ -1,6 +1,7 @@
 package pokement.lstar.common;
 
 import cn.hutool.core.date.LocalDateTimeUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.jwt.JWTUtil;
 import pokement.lstar.system.SysConfig;
 
@@ -45,6 +46,8 @@ public class TokenUtil {
 
     public static Boolean verify(String token)
     {
+        if (StrUtil.isEmptyIfStr(token))
+            return false;
         return JWTUtil.verify(token, SysConfig.getStr("token_secret", "294554846").getBytes());
     }
 }

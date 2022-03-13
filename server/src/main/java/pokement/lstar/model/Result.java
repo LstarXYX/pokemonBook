@@ -32,6 +32,7 @@ public class Result implements Serializable {
         public Integer code;
 
         ReturnCode(int code) {
+            this.code = code;
         }
 
         public Integer getCode() {

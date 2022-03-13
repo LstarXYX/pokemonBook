@@ -17,7 +17,8 @@ import java.util.Map;
  * @author L.star
  * @date 2022/2/27 11:32
  */
-@RestController("/admin")
+@RestController
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
